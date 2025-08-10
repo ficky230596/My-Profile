@@ -32,7 +32,7 @@ body.dark {
 .container {
     width: 100%;
     max-width: 1200px;
-    padding: 2vw;
+    padding: clamp(1rem, 2vw, 2rem);
     position: relative;
     z-index: 1;
 }
@@ -43,7 +43,7 @@ body.dark {
     border-radius: 1.5rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
     max-width: 600px;
-    margin: 0 auto;
+    margin: clamp(2rem, 5vw, 3rem) auto;
     overflow: hidden;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
@@ -221,21 +221,27 @@ body.dark .profile-header {
 
 .theme-toggle {
     position: fixed;
-    top: clamp(0.8rem, 2vw, 1.2rem);
-    right: clamp(0.8rem, 2vw, 1.2rem);
+    top: clamp(1rem, 3vw, 1.5rem);
+    right: clamp(1rem, 3vw, 1.5rem);
     background: rgba(255, 255, 255, 0.2);
     border: none;
-    width: clamp(2rem, 5vw, 3rem);
-    height: clamp(2rem, 5vw, 3rem);
+    width: clamp(2rem, 6vw, 3rem);
+    height: clamp(2rem, 6vw, 3rem);
     border-radius: 50%;
     cursor: pointer;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(1rem, 2.8vw, 1.5rem);
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* Ensure button stays above profile card */
 }
 
 body.dark .theme-toggle {
     background: rgba(0, 0, 0, 0.5);
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+    transform: scale(1.1);
 }
 
 .theme-toggle:focus {
@@ -262,6 +268,7 @@ body.dark .theme-toggle {
 @media (max-width: 768px) {
     .profile-card {
         max-width: 90%;
+        margin: clamp(3rem, 8vw, 4rem) auto; /* Extra margin for theme toggle */
     }
 
     .profile-img-container {
@@ -285,15 +292,21 @@ body.dark .theme-toggle {
         font-size: clamp(0.6rem, 1.6vw, 0.7rem);
         bottom: clamp(-1.8rem, -4.5vw, -1.5rem);
     }
+
+    .theme-toggle {
+        top: clamp(0.8rem, 2.5vw, 1rem);
+        right: clamp(0.8rem, 2.5vw, 1rem);
+    }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     .profile-card {
         max-width: 95%;
+        margin: clamp(3.5rem, 10vw, 4.5rem) auto; /* Extra space for theme toggle */
     }
 
     .profile-img-container {
@@ -338,15 +351,18 @@ body.dark .theme-toggle {
     }
 
     .theme-toggle {
-        width: clamp(1.8rem, 4.5vw, 2.5rem);
-        height: clamp(1.8rem, 4.5vw, 2.5rem);
+        width: clamp(1.8rem, 5vw, 2.5rem);
+        height: clamp(1.8rem, 5vw, 2.5rem);
         font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+        top: clamp(0.5rem, 2vw, 0.8rem);
+        right: clamp(0.5rem, 2vw, 0.8rem);
     }
 }
 
 @media (max-width: 360px) {
     .profile-card {
         max-width: 98%;
+        margin: clamp(4rem, 12vw, 5rem) auto; /* More space for theme toggle */
     }
 
     .profile-img-container {
@@ -356,5 +372,10 @@ body.dark .theme-toggle {
 
     .social-links {
         flex-wrap: wrap;
+    }
+
+    .theme-toggle {
+        top: clamp(0.3rem, 1.5vw, 0.6rem);
+        right: clamp(0.3rem, 1.5vw, 0.6rem);
     }
 }

@@ -1,17 +1,14 @@
-// script.js
-// Theme Toggle
+// script.js (tidak berubah, hanya disertakan untuk kelengkapan)
 function toggleTheme() {
     document.body.classList.toggle('dark');
     const themeToggle = document.querySelector('.theme-toggle');
     themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 }
 
-// Contact Alert
 function showContact() {
     alert('Let’s connect! Reach me at: john.doe@example.com');
 }
 
-// Typing Animation
 const typed = new Typed('.typing', {
     strings: [
         'Passionate about crafting stunning web experiences.',
@@ -24,14 +21,12 @@ const typed = new Typed('.typing', {
     loop: true
 });
 
-// Particle Background
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Adjust particle count based on screen size
 const particleCount = window.innerWidth <= 480 ? 50 : window.innerWidth <= 768 ? 75 : 100;
 
 const particles = [];
@@ -75,7 +70,7 @@ function animateParticles() {
         particle.update();
         particle.draw();
     });
-    if (window.innerWidth > 480) connectParticles(); // Disable connections on small screens
+    if (window.innerWidth > 480) connectParticles();
     requestAnimationFrame(animateParticles);
 }
 
@@ -104,7 +99,6 @@ animateParticles();
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    // Reinitialize particles on resize for better performance
     particles.length = 0;
     initParticles();
 });
