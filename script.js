@@ -1,18 +1,14 @@
-// script.js (tidak berubah, hanya disertakan untuk kelengkapan)
+// script.js
 function toggleTheme() {
     document.body.classList.toggle('dark');
     const themeToggle = document.querySelector('.theme-toggle');
     themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 }
 
-function showContact() {
-    alert('Let’s connect! Reach me at: fickyrahanubun@gmail.com');
-}
-
 const typed = new Typed('.typing', {
     strings: [
         'Passionate about crafting stunning web experiences.',
-        'Skilled in HTML, CSS, JavaScript, and flask.',
+        'Skilled in HTML, CSS, JavaScript, and React.',
         'Loves turning ideas into interactive realities.'
     ],
     typeSpeed: 50,

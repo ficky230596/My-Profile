@@ -196,21 +196,29 @@ body.dark .profile-header {
 }
 
 .contact-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     width: 100%;
     padding: clamp(0.8rem, 2.5vw, 1rem);
-    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    background: linear-gradient(135deg, #25D366, #128C7E); /* WhatsApp colors */
     color: #fff;
     border: none;
     border-radius: 0.6rem;
     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     cursor: pointer;
+    text-decoration: none;
     transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-btn i {
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
 }
 
 .contact-btn:hover,
 .contact-btn:focus {
-    background: linear-gradient(135deg, #4ecdc4, #ff6b6b);
+    background: linear-gradient(135deg, #128C7E, #25D366);
     transform: scale(1.05);
 }
 
@@ -232,7 +240,7 @@ body.dark .profile-header {
     font-size: clamp(1rem, 2.8vw, 1.5rem);
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease, transform 0.3s ease;
-    z-index: 1000; /* Ensure button stays above profile card */
+    z-index: 1000;
 }
 
 body.dark .theme-toggle {
@@ -268,7 +276,7 @@ body.dark .theme-toggle {
 @media (max-width: 768px) {
     .profile-card {
         max-width: 90%;
-        margin: clamp(3rem, 8vw, 4rem) auto; /* Extra margin for theme toggle */
+        margin: clamp(3rem, 8vw, 4rem) auto;
     }
 
     .profile-img-container {
@@ -306,7 +314,7 @@ body.dark .theme-toggle {
 
     .profile-card {
         max-width: 95%;
-        margin: clamp(3.5rem, 10vw, 4.5rem) auto; /* Extra space for theme toggle */
+        margin: clamp(3.5rem, 10vw, 4.5rem) auto;
     }
 
     .profile-img-container {
@@ -350,6 +358,10 @@ body.dark .theme-toggle {
         font-size: clamp(0.8rem, 2.2vw, 1rem);
     }
 
+    .contact-btn i {
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    }
+
     .theme-toggle {
         width: clamp(1.8rem, 5vw, 2.5rem);
         height: clamp(1.8rem, 5vw, 2.5rem);
@@ -362,7 +374,7 @@ body.dark .theme-toggle {
 @media (max-width: 360px) {
     .profile-card {
         max-width: 98%;
-        margin: clamp(4rem, 12vw, 5rem) auto; /* More space for theme toggle */
+        margin: clamp(4rem, 12vw, 5rem) auto;
     }
 
     .profile-img-container {
