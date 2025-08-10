@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Profile Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="container">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-img-container">
+                    <img src="Profile.png" alt="Profile Picture" class="profile-img">
+                    <div class="img-overlay"></div>
+                </div>
+                <h1 class="profile-name">John Doe</h1>
+                <p class="profile-title">Creative Web Developer</p>
+            </div>
+            <div class="profile-body">
+                <p class="profile-bio">
+                    <span class="typing"></span>
+                </p>
+                <div class="profile-info">
+                    <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">john.doe@example.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Location:</span>
+                        <span class="info-value">Jakarta, Indonesia</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Phone:</span>
+                        <span class="info-value">+62 123 456 7890</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+                <button class="contact-btn" onclick="showContact()">Let's Connect</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
