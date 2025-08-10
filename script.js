@@ -31,16 +31,18 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+// Adjust particle count based on screen size
+const particleCount = window.innerWidth <= 480 ? 50 : window.innerWidth <= 768 ? 75 : 100;
+
 const particles = [];
-const particleCount = 100;
 
 class Particle {
     constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3 + 1;
-        this.speedX = Math.random() * 2 - 1;
-        this.speedY = Math.random() * 2 - 1;
+        this.size = Math.random() * (window.innerWidth <= 480 ? 2 : 3) + 1;
+        this.speedX = Math.random() * (window.innerWidth <= 480 ? 1 : 2) - (window.innerWidth <= 480 ? 0.5 : 1);
+        this.speedY = Math.random() * (window.innerWidth <= 480 ? 1 : 2) - (window.innerWidth <= 480 ? 0.5 : 1);
     }
 
     update() {
@@ -73,7 +75,7 @@ function animateParticles() {
         particle.update();
         particle.draw();
     });
-    connectParticles();
+    if (window.innerWidth > 480) connectParticles(); // Disable connections on small screens
     requestAnimationFrame(animateParticles);
 }
 
@@ -102,4 +104,7 @@ animateParticles();
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    // Reinitialize particles on resize for better performance
+    particles.length = 0;
+    initParticles();
 });
