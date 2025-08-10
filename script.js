@@ -1,4 +1,4 @@
-// script.js
+/* script.js */
 function toggleTheme() {
     document.body.classList.toggle('dark');
     const themeToggle = document.querySelector('.theme-toggle');
@@ -7,9 +7,9 @@ function toggleTheme() {
 
 const typed = new Typed('.typing', {
     strings: [
-        'Passionate about crafting stunning web experiences.',
-        'Skilled in HTML, CSS, JavaScript, and React.',
-        'Loves turning ideas into interactive realities.'
+        'Passionate about crafting web experiences.',
+        'Skilled in modern web technologies.',
+        'Loves turning ideas into reality.'
     ],
     typeSpeed: 50,
     backSpeed: 30,

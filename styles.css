@@ -131,29 +131,6 @@ body.dark .profile-header {
     vertical-align: top;
 }
 
-.profile-info {
-    margin-bottom: clamp(1rem, 3vw, 1.5rem);
-}
-
-.info-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: clamp(0.5rem, 1.5vw, 0.75rem) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: clamp(0.8rem, 2vw, 0.95rem);
-}
-
-.info-label {
-    font-weight: 600;
-    color: #fff;
-}
-
-.info-value {
-    color: rgba(255, 255, 255, 0.8);
-    text-align: right;
-}
-
 .social-links {
     display: flex;
     justify-content: center;
@@ -202,7 +179,7 @@ body.dark .profile-header {
     gap: 0.5rem;
     width: 100%;
     padding: clamp(0.8rem, 2.5vw, 1rem);
-    background: linear-gradient(135deg, #25D366, #128C7E); /* WhatsApp colors */
+    background: linear-gradient(135deg, #25D366, #128C7E);
     color: #fff;
     border: none;
     border-radius: 0.6rem;
@@ -333,16 +310,6 @@ body.dark .theme-toggle {
     .profile-bio {
         font-size: clamp(0.75rem, 1.8vw, 0.85rem);
         line-height: 1.5;
-    }
-
-    .info-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
-    }
-
-    .info-value {
-        text-align: left;
     }
 
     .social-links {
