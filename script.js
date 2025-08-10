@@ -6,13 +6,13 @@ function toggleTheme() {
 }
 
 function showContact() {
-    alert('Let’s connect! Reach me at: john.doe@example.com');
+    alert('Let’s connect! Reach me at: fickyrahanubun@gmail.com');
 }
 
 const typed = new Typed('.typing', {
     strings: [
         'Passionate about crafting stunning web experiences.',
-        'Skilled in HTML, CSS, JavaScript, and React.',
+        'Skilled in HTML, CSS, JavaScript, and flask.',
         'Loves turning ideas into interactive realities.'
     ],
     typeSpeed: 50,
